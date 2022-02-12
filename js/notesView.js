@@ -10,7 +10,9 @@ export default class NotesView {
     this.onNoteDelete = onNoteDelete;
     this.root.innerHTML = `
             <div class="notes__sidebar">
-                <button class="notes__add" type="button">Add Note</button>
+                <div class="notes__add">
+                  <button class="notes__add-btn" type="button">Add Note</button>
+                </div>
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
@@ -19,7 +21,7 @@ export default class NotesView {
             </div>
         `;
 
-    const btnAddNote = this.root.querySelector(".notes__add");
+    const btnAddNote = this.root.querySelector(".notes__add-btn");
     const inpTitle = this.root.querySelector(".notes__title");
     const inpBody = this.root.querySelector(".notes__body");
 
@@ -51,7 +53,7 @@ export default class NotesView {
                 </div>
                 <div class="notes__small-updated">
                     ${updated.toLocaleString(undefined, {
-                      dateStyle: "full",
+                      dateStyle: "medium",
                       timeStyle: "short",
                     })}
                 </div>
